@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Hanieh_Mohajerani
 {
-    internal class Program
+    internal class Class1
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
