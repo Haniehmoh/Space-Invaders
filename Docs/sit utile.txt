@@ -4,4 +4,18 @@ https://github.com/Pholith/Space-invaders/tree/master/SpaceInvaders
 
 https://perso.esiee.fr/~perretb/E3FI/SujetProjet.pdf
 
-Space Invaders - Piste Verte — Documentation Programmation Orientée Objet 1 (esiee.fr)
+
+this is for learning c# from prof:
+
+https://www.tutorialspoint.com/index.htm  
+ 
+https://www.sololearn.com/en/
+
+for diagramme:
+https://www.visual-paradigm.com
+
+https://developer.ibm.com/articles/the-sequence-diagram/
+
+projet space invaders
+
+https://perso.esiee.fr/~perretb/I3FM/POO1/projet/index.html
