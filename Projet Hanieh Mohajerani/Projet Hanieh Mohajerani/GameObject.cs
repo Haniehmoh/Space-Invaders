@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Projet_Hanieh_Mohajerani
 {
@@ -28,10 +29,7 @@ namespace Projet_Hanieh_Mohajerani
             return _life > 0;
 
         }
-        public void Update()
-        {
-
-        }
+       
        
     }
 

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using System.Windows.Threading;
+using System.Windows.Input;
 namespace Projet_Hanieh_Mohajerani
 {
 
@@ -17,23 +18,21 @@ namespace Projet_Hanieh_Mohajerani
     {
 
 
-        static void Main()
+    static void Main()
+    {
+        bool delay = true;
+
+
         {
-            bool delay = true;
-
-
-            {
-                SpaceShip Player = new SpaceShip();
-                Thread.Sleep(70);
-            }
-
-
-
-
-
+            SpaceShip Player = new SpaceShip();
+            Thread.Sleep(70);
         }
 
-    }    }
+
+    }
+
+    } 
+}
 
 
 
