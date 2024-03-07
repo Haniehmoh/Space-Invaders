@@ -1,4 +1,11 @@
-﻿using System;
+﻿
+///ETML
+///Author:hanieh Mohajerani
+///Date:18.01.2024
+///Description:projet jeu space invarde     
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,17 +16,9 @@ using System.Windows.Input;
 
 
 
-///ETML
-///Author:hanieh Mohajerani
-///Date:18.01.2024
-///Description:projet jeu space invarde     
-
-
 
 namespace Projet_Hanieh_Mohajerani
 {
-
-
 
 
     internal class SpaceShip
@@ -42,55 +41,54 @@ namespace Projet_Hanieh_Mohajerani
             // Initialisation du DispatcherTimer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMilliseconds(100); // Délai entre chaque tick (100 millisecondes)
-            _timer.Tick += Timer_Tick;
+           // _timer.Tick += Timer_Tick;
             _timer.Start();
 
             Draw(gameObjects);
         }
 
+        List<GameObject> gameObjects = new List<GameObject>();
+
         /// <summary>
         /// Champ pour le missile actuel
         /// </summary>
         private Missile _missile; // Champ pour le missile actuel
+
         /// <summary>
-        /// 
+        /// lives de objet
         /// </summary>
         public int Lives { get; set; }
+
         /// <summary>
-        /// 
+        /// direction y
         /// </summary>
         private int _positionY = 25;
+
         /// <summary>
-        /// 
+        /// direction x
         /// </summary>
         private int _positionX = 30;
+
+        
         /// <summary>
-        /// 
-        /// </summary>
-        private int _lives;
-        /// <summary>
-        /// 
+        /// creer objet
         /// </summary>
         private string _shipSymbol = "<-->";
+
         /// <summary>
         /// 
         /// </summary>
         private int _playerSpeed;
 
-        /// <summary>
-        /// lives
-        /// </summary>
-        public int lives { get; set; }
-
-
-
+      
+      
 
         /// <summary>
         /// our constat will go left and write
         /// </summary>
-        /// 
-        // Gérer le tick du DispatcherTimer
-        private void Timer_Tick(object sender, EventArgs e)
+        
+        ///Gérer le tick du DispatcherTimer
+      /**  private void Timer_Tick(object sender, EventArgs e)
         {
             if(Console.KeyAvailable)
             {
@@ -144,6 +142,13 @@ namespace Projet_Hanieh_Mohajerani
                 Write(_shipSymbol, _positionX, _positionY);
             }
         }
+        private void MoveUp()
+        {
+            if(_positionY > 0)
+            {
+                _positionY--;
+            }
+        }*/
         void Draw(List<GameObject> gameObjects)
         {
             const string toWrite = "<-->"; // Character to write on-screen.
@@ -186,6 +191,7 @@ namespace Projet_Hanieh_Mohajerani
                             Shoot(gameObjects, true);
                             break;
 
+                           
                     }
                     // Afficher et mettre à jour la position des missiles
                     foreach (var gameObject in gameObjects)
@@ -195,6 +201,8 @@ namespace Projet_Hanieh_Mohajerani
                             Missile missile = (Missile)gameObject;
                             Write(missile._mission.ToString(), missile._positionX, missile._positionY);
                             missile.UpdatePosition(); // Mettre à jour la position du missile
+                            Console.SetCursorPosition(_positionX, _positionX);
+                            Console.Write("|");
                         }
                     }
                     Write(toWrite, positionX, positionY);
@@ -209,12 +217,13 @@ namespace Projet_Hanieh_Mohajerani
         /// <param name="toWrite">Draws the layer</param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public static void Write(string toWrite, int x = 0, int y = 0)
+        public static void Write(string toWrite, int x , int y )
         {
+            
             Console.SetCursorPosition(x, y);
+          //  Console.Write("|");
             Console.Write(" ");
             Console.Write(toWrite);
-
 
         }
 
@@ -253,19 +262,20 @@ namespace Projet_Hanieh_Mohajerani
             }
         }
 
-        public void Shoot(List<GameObject> gameObjects, bool isPlayerMissile)
+       public void Shoot(List<GameObject> gameObjects, bool isPlayerMissile)
         {
-            int velocityY = isPlayerMissile ? -1 : 1; // Définir la vitesse verticale en fonction de qui tire le missile
+              int velocityY = isPlayerMissile ? -1 : 1; // Définir la vitesse verticale en fonction de qui tire le missile
 
             // Vérifier s'il n'y a pas de missile actuellement ou si le missile existant est mort
-            if (_missile == null || !_missile.IsAlive())
-            {
-                // Créer un nouveau missile positionné au milieu du vaisseau
-                _missile = new Missile(_positionX, _positionY - 1, '|', velocityY); // Supposons que le vaisseau tire vers le haut
+              if (_missile == null || !_missile.IsAlive())
+              {
+                  // Créer un nouveau missile positionné au milieu du vaisseau
+                  _missile = new Missile(_positionX, _positionY - 1, '|', velocityY); // Supposons que le vaisseau tire vers le haut
 
-                // Ajouter le nouveau missile aux objets du jeu
-                gameObjects.Add(_missile);
-            }
+                  // Ajouter le nouveau missile aux objets du jeu
+                  gameObjects.Add(_missile);
+              }
+          // _missile = new Missile(_positionX, _positionY - 1, '|', velocityY);
         }
 
     }

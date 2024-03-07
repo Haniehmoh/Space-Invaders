@@ -14,7 +14,8 @@ namespace Projet_Hanieh_Mohajerani
     ///Date:18.01.2024
     ///Description:projet jeu space invarde     
 
-    internal class Game1
+    internal class Program
+
     {
 
 

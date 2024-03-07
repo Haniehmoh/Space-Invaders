@@ -1,0 +1,8 @@
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\bin\Debug\Projet-Space invaders.exe.config
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\bin\Debug\Projet-Space invaders.exe
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\bin\Debug\Projet-Space invaders.pdb
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\obj\Debug\Projet-Space invaders.csproj.AssemblyReference.cache
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\obj\Debug\Projet-Space invaders.csproj.SuggestedBindingRedirects.cache
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\obj\Debug\Projet-Space invaders.csproj.CoreCompileInputs.cache
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\obj\Debug\Projet-Space invaders.exe
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet-Space invaders\Projet-Space invaders\obj\Debug\Projet-Space invaders.pdb

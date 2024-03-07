@@ -45,7 +45,7 @@ namespace Projet_Hanieh_Mohajerani
             _positionX = positionX;
             _positionY = positionY;
             _mission = mission;
-            _life = 3;
+           // _life = 3;
         }
 
 
