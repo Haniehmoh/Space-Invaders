@@ -1,39 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using test_jeu;
 using System.Windows.Input;
-
 namespace test_jeu
 {
     internal class Missile
     {
-        private string _enemie { get; set; }
-        private int _positionXenemie { get; set; }
-        private int _positionYenemie { get; set; }
-        private int _positionX { get; set; }
-        private int _positionY { get; set; }
-        public int PositionY { get; internal set; }
-
-        private char _symbol = '|';
+        public int _positionX {  get; set; }
+        public int _positionY {  get; set; }
+        public char _symbol = '|';
         private int _speed;
         private List<Missile> _missiles = new List<Missile>();
+        public int PositionY { get { return _positionY; } } // Ajout d'un getter pour la position Y
 
-        public Missile(int x, int y, int speed)
+        public int PositionX { get { return _positionX; } }
+        public Missile(int x, int y, int speed, char symbol)
         {
             _positionX = x;
             _positionY = y;
             _speed = speed;
+            _symbol = symbol;
         }
 
-        public Missile(int positionXenemie, int positionYenemie, string enemie, int speed, List<Missile> missiles)
+        public Missile(int initialX, int initialY, char symbol)
         {
-            _positionYenemie = positionYenemie;
-            _positionXenemie = positionXenemie;
-            _enemie = enemie;
-            _speed = speed;
-            _missiles = missiles;
+            _positionX = initialX;
+            _positionY = initialY;
+            _symbol = symbol;
+        }
+
+        public void MoveEnemy(List<Missile> missiles)
+        {
+            // Vérifier si le missile est toujours dans la zone d'affichage de la console
+            if (_positionY >= 0 && _positionY < Console.WindowHeight &&
+                _positionX >= 0 && _positionX < Console.WindowWidth)
+            {
+                // Effacer la position actuelle du missile
+                Console.SetCursorPosition(_positionX, _positionY);
+                Console.Write(' '); // Effacer le symbole du missile
+
+                // Mettre à jour la position Y du missile
+                _positionY += _speed;
+
+                // Vérifier si le missile est sorti de l'écran
+                if (_positionY >= Console.WindowHeight)
+                {
+                    // Supprimer le missile de la liste
+                    missiles.Remove(this);
+                }
+            }
         }
 
 
@@ -44,41 +59,27 @@ namespace test_jeu
             {
                 // Retirer le missile de la liste
                 _missiles.Remove(this);
-            }// Déplacer selon la vitesse définie
+            }
         }
 
-        public void MoveEnemie()
+
+        public void DrawEnemy()
         {
-            _positionYenemie += _speed;
-            if (_positionY >= Console.WindowHeight) // Vérifier si le missile est sorti de la zone d'affichage
+            if (_positionY >= 0 && _positionY < Console.WindowHeight &&
+                _positionX >= 0 && _positionX < Console.WindowWidth)
             {
-                // Retirer le missile de la liste
-                _missiles.Remove(this);
+                Console.SetCursorPosition(_positionX, _positionY);
+                Console.Write(_symbol);
             }
         }
 
         public void Draw()
         {
-             if (_positionY >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
-             {
-            Console.SetCursorPosition(_positionX, _positionY);
-            Console.Write(_symbol);
-
-
-             }
-
-          
-        }
-
-        public void DrawEnemie()
-        {
-            if (_positionYenemie >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
+            if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
             {
-                Console.SetCursorPosition(_positionXenemie, _positionYenemie);
+                Console.SetCursorPosition(_positionX, _positionY);
                 Console.Write(_symbol);
-           }
-
-
+            }
         }
 
     }
