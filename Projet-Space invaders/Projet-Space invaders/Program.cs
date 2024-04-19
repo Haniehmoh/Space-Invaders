@@ -1,16 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using Projet_Space_invaders;
 using System.Windows.Input;
+using System.Runtime.InteropServices;
 
-namespace Projet_Hanieh_Mohajerani
-{
+namespace Projet_Space_invaders
+{ 
     class Program
     {
-        [STAThread]
-        static void Main(string[] args)
-        {
-            SpaceShip spaceShip = new SpaceShip();
 
-        }
+    [STAThread]
+    static void Main(string[] args)
+    {
+        // Disable vertical scrolling
+        Console.SetBufferSize(Console.WindowWidth, Console.WindowHeight);
+        SpaceShip spaceShip = new SpaceShip();
+
+    }
+
     }
 }
 

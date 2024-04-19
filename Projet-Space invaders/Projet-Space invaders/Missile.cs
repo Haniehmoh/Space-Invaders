@@ -1,31 +1,29 @@
-﻿using System;
+﻿////ETML 
+///Hanieh Mohajerani 
+///date:18.01.2024
+///Description:jeu Space Invaders
+using System;
 using System.Collections.Generic;
-using test_jeu;
+using Projet_Space_invaders;
 using System.Windows.Input;
-namespace test_jeu
+
+namespace Projet_Space_invaders
 {
-    internal class Missile
+    internal class Missile 
     {
         public int _positionX {  get; set; }
         public int _positionY {  get; set; }
         public char _symbol = '|';
-        private int _speed;
-        private List<Missile> _missiles = new List<Missile>();
+        public int _speed;
+        public List<Missile> _missiles = new List<Missile>();
         public int PositionY { get { return _positionY; } } // Ajout d'un getter pour la position Y
 
         public int PositionX { get { return _positionX; } }
-        public Missile(int x, int y, int speed, char symbol)
+        public Missile(int x, int y, int speed, char symbol )
         {
             _positionX = x;
             _positionY = y;
             _speed = speed;
-            _symbol = symbol;
-        }
-
-        public Missile(int initialX, int initialY, char symbol)
-        {
-            _positionX = initialX;
-            _positionY = initialY;
             _symbol = symbol;
         }
 
@@ -51,7 +49,6 @@ namespace test_jeu
             }
         }
 
-
         public void Move()
         {
             _positionY -= _speed;
@@ -63,17 +60,7 @@ namespace test_jeu
         }
 
 
-        public void DrawEnemy()
-        {
-            if (_positionY >= 0 && _positionY < Console.WindowHeight &&
-                _positionX >= 0 && _positionX < Console.WindowWidth)
-            {
-                Console.SetCursorPosition(_positionX, _positionY);
-                Console.Write(_symbol);
-            }
-        }
-
-        public void Draw()
+        public void DrawMissile()
         {
             if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
             {
@@ -82,5 +69,18 @@ namespace test_jeu
             }
         }
 
+        public void DrawEnemy()
+        {
+            if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
+            {
+                Console.SetCursorPosition(_positionX, _positionY);
+                Console.Write(_symbol);
+            }
+        }
+
+        internal void MoveAndCheckCollision()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

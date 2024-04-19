@@ -1,17 +1,21 @@
-﻿using System;
+﻿////ETML 
+///Hanieh Mohajerani 
+///date:18.01.2024
+///Description:jeu Space Invaders
+using System;
 using System.Collections.Generic;
-using test_jeu;
 using System.Windows.Input;
 using Projet_Space_invaders;
 using System.Windows.Media.Media3D;
+using System.Linq;
 
-namespace Projet_Hanieh_Mohajerani
+namespace Projet_Space_invaders
 {
     internal class SpaceShip
     {
-        private int _shipPositionX = 20; // Position initiale du vaisseau
-        private int _shipPositionY = 25; // Position initiale du vaisseau
-        private string _shipSymbol = "<-->";
+        public int _shipPositionX = 20; // Position initiale du vaisseau
+        public int _shipPositionY = 25; // Position initiale du vaisseau
+        public string _shipSymbol = "<-->";
         private List<Missile> _shipMissiles = new List<Missile>();
         private int _enemyPositionX = 1; // Position initiale de l'ennemi
         private int _enemyPositionY = 1; // Position initiale de l'ennemi
@@ -19,23 +23,35 @@ namespace Projet_Hanieh_Mohajerani
         private List<Missile> _enemyMissiles = new List<Missile>();
         private bool isright = true;
         private List<int[]> _enemyPositions = new List<int[]>();
-        private List<Missile> _missile =new List<Missile>();
-       
+        private List<Missile> _missile = new List<Missile>();
+        private List<int[]> _wallPositions = new List<int[]>();   // Déclaration de la liste des positions des murs
+        private int _shipHits = 0; // Variable pour compter les touches sur le vaisseau
         public SpaceShip()
         {
-            Draw();
+            Console.SetWindowSize(80, 30); // Définir la taille de la fenêtre de console
+
+            // Ajouter les positions des murs à la liste
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    for (int j = 0; j < 50; j += 15)
+            //    {
+            //        _wallPositions.Add(new int[] { j, Console.WindowHeight - 8 + i });
+            //    }
+            //}
 
             while (true)
             {
                 HandleShipInput();
                 HandleEnemyInput();
                 MoveShipMissiles();
-                ShootFromEnemy(1,1);
                 Draw();
-                System.Threading.Thread.Sleep(20); // Petit délai pour ne pas surcharger le CPU
+                System.Threading.Thread.Sleep(50); // Petit délai pour ne pas surcharger le CPU
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void HandleShipInput()
         {
             if (Console.KeyAvailable)
@@ -49,44 +65,9 @@ namespace Projet_Hanieh_Mohajerani
             }
         }
 
-
-        /* private void HandleEnemyInput()
-         {
-            
-             if (random.Next(0, 100) < 5) // Modifier ce nombre pour ajuster la probabilité de tir
-             {
-                 foreach (var enemyPosition in _enemyPositions)
-                 {
-                     // Tirer seulement si l'ennemi est sur la dernière ligne de la console
-                     if (enemyPosition[1] == Console.WindowHeight - 1)
-                     {
-                        // ShootFromEnemy(enemyPosition[0], enemyPosition[1]);
-                     }
-                 }
-             }
-
-             if (isright)
-             {
-                 _enemyPositionX++;
-                 if (_enemyPositionX >= Console.WindowWidth - _enemySymbol.Length)
-                 {
-                     isright = false;
-                     _enemyPositionY++;
-                 }
-             }
-             else
-             {
-                 _enemyPositionX--;
-                 if (_enemyPositionX <= 0)
-                 {
-                     isright = true;
-                     _enemyPositionY++;
-                 }
-             }
-         }*/
-
-
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void HandleEnemyInput()
         {
             int numLines = 4; // Nombre de lignes d'ennemis
@@ -100,9 +81,14 @@ namespace Projet_Hanieh_Mohajerani
             int newEnemyPositionX = _enemyPositionX + (isright ? 1 : -1);
 
             // Vérifier les limites de l'écran pour inverser la direction si nécessaire
-            if (newEnemyPositionX >= Console.WindowWidth - _enemySymbol.Length || newEnemyPositionX <= 0)
+            if (newEnemyPositionX >= Console.WindowWidth - numEnemiesPerLine * spacingX)
             {
-                isright = !isright;
+                isright = false;
+                _enemyPositionY++;
+            }
+            else if (newEnemyPositionX <= 0) // Modification pour traiter le bord gauche
+            {
+                isright = true;
                 _enemyPositionY++;
             }
             else
@@ -126,7 +112,7 @@ namespace Projet_Hanieh_Mohajerani
                     if (line == numLines - 1 && random.Next(0, 100) < 5)
                     {
                         // Créer un missile et l'ajouter à la liste des missiles ennemis
-                        _enemyMissiles.Add(new Missile(x + _enemySymbol.Length / 2, y + 1, -1, '|')); // Déplacement vers le bas (-1 en Y)
+                        _enemyMissiles.Add(new Position(x + _enemySymbol.Length / 2, y - 1, 1, '|', this)); // Déplacement vers le bas (-1 en Y)
                     }
                 }
             }
@@ -150,7 +136,9 @@ namespace Projet_Hanieh_Mohajerani
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void ShootFromShip()
         {
 
@@ -158,21 +146,12 @@ namespace Projet_Hanieh_Mohajerani
             int missileY = _shipPositionY - 1; // Au-dessus du vaisseau
             int missileSpeed = 2; // Vitesse du missile
             char missileSpeedChar = '|';
-            _shipMissiles.Add(new Missile(missileX, missileY, missileSpeed ,missileSpeedChar));
+            _shipMissiles.Add(new Missile(missileX, missileY, missileSpeed, missileSpeedChar));
         }
 
-
-
-
-       private void ShootFromEnemy(int enemyX, int enemyY)
-        {
-            int missileX = enemyX + _enemySymbol.Length / 2; // Centre de l'ennemi
-            int missileY = enemyY + 1; // Bas de l'ennemi
-            int missileSpeed = 2; // Vitesse du missile
-            char misileSpeedChar = '|'; 
-            _enemyMissiles.Add(new Missile(missileX, missileY, missileSpeed,'|'));
-        }
-      
+        /// <summary>
+        /// 
+        /// </summary>
 
         private void Draw()
         {
@@ -194,19 +173,19 @@ namespace Projet_Hanieh_Mohajerani
             foreach (var missile in _shipMissiles)
             {
                 Console.SetCursorPosition(_shipPositionX, _shipPositionY);
-                missile.Draw();
+                missile.DrawMissile();
             }
 
-           /* foreach (var missile in _enemyMissiles)
+            foreach (var missile in _enemyMissiles)
             {
                 missile.DrawEnemy();
-            }*/
+            }
 
 
             // Dessiner les ennemis
             foreach (var enemyPosition in _enemyPositions)
             {
-               
+
                 // Vérifier que les positions ne dépassent pas les limites de la console
                 if (enemyPosition[0] >= 0 && enemyPosition[0] < Console.WindowWidth &&
                     enemyPosition[1] >= 0 && enemyPosition[1] < Console.WindowHeight)
@@ -214,43 +193,90 @@ namespace Projet_Hanieh_Mohajerani
                     Console.SetCursorPosition(enemyPosition[0], enemyPosition[1]);
                     Console.Write(_enemySymbol);
                 }
-               
+
             }
 
-
-            // Gérer les collisions avec le mur et effacer les missiles ennemis qui atteignent le bas
-            foreach (var missile in _enemyMissiles)
-            {
-                // Vérifier si le missile atteint le mur
-                if (missile.PositionY >= Console.WindowHeight - 1)
-                {
-                    // Effacer la partie touchée du mur
-                    Console.SetCursorPosition(missile.PositionX, Console.WindowHeight - 1);
-                    Console.Write(" "); // Effacer une seule case du mur
-
-                    // Retirer le missile de la liste
-                    _enemyMissiles.Remove(missile);
-                    break; // Sortir de la boucle foreach pour éviter une exception liée à la modification de la collection en cours d'itération
-                }
-            }
 
             // Réinitialiser la position du curseur
             Console.SetCursorPosition(0, 0);
-       }
+        }
 
+
+        // Dessiner les murs
         private void DrawWalls()
-         {
-             // Première ligne de mur
-             Console.SetCursorPosition(0, Console.WindowHeight - 8);
-             Console.Write("    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌   ");
-             Console.SetCursorPosition(0, Console.WindowHeight - 7);
-             Console.Write("    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌   ");
+        {
+            // Première ligne de mur
+            Console.SetCursorPosition(0, Console.WindowHeight - 8);
+            Console.Write("▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌    ▌▌▌▌▌▌▌▌▌▌   ");
 
-         }
-       
-       
+            // Ajout des positions des murs à la liste
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 50; j += 15)
+                {
+                    _wallPositions.Add(new int[] { j, Console.WindowHeight - 8 + i });
+                }
+            }
+        }
+
+        // Méthodes pour gérer les missiles ennemis
+        public void AddEnemyMissile(Missile missile)
+        {
+            _enemyMissiles.Add(missile);
+        }
+
+        public void RemoveEnemyMissile(Missile missile)
+        {
+            _enemyMissiles.Remove(missile);
+        }
+
+        // Méthode pour gérer les collisions avec les missiles ennemis
+        // Méthode pour gérer les collisions avec les missiles ennemis et les murs
+        public void CheckEnemyMissileCollision()
+        {
+            // Parcourir la liste des missiles ennemis
+            foreach (var missile in _enemyMissiles)
+            {
+                // Vérifier la collision avec le vaisseau
+                if (missile.PositionX >= _shipPositionX &&
+                    missile.PositionX < _shipPositionX + _shipSymbol.Length &&
+                    missile.PositionY == _shipPositionY)
+                {
+                    _shipHits++; // Augmenter le compteur de touches sur le vaisseau
+
+                    // Effacer le missile de la liste
+                    RemoveEnemyMissile(missile);
+
+                    if (_shipHits >= 5) // Si le vaisseau est touché 5 fois
+                    {
+                        Console.Clear(); // Effacer la console
+                        Console.WriteLine("Game Over! Vous avez été touché 5 fois. Le jeu est terminé."); // Afficher un message de fin de jeu
+                        Environment.Exit(0); // Quitter le jeu
+                    }
+                }
+
+                // Vérifier la collision avec les murs
+                foreach (var wallPosition in _wallPositions)
+                {
+                    if (missile.PositionX == wallPosition[0] && missile.PositionY == wallPosition[1])
+                    {
+                        // Effacer le missile de la liste
+                        RemoveEnemyMissile(missile);
+                        // Effacer le mur de la liste
+                        _wallPositions.Remove(wallPosition);
+                        break; // Sortir de la boucle pour éviter les modifications concurrentes
+                    }
+                }
+            }
+        }
+        public void ResetShipPosition()
+        {
+            _shipPositionX = 20; // Réinitialiser la position X du vaisseau
+            _shipPositionY = 25; // Réinitialiser la position Y du vaisseau
+        }
+
+
     }
 }
-
 
 
