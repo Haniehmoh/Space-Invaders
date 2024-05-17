@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\projet\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|solutionrelative:projet\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\projet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|solutionrelative:projet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|d:\\cours-semestre\\semestres\\semestre 1-2\\projet-module-c#\\projet\\projet\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|solutionrelative:projet\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\projet\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C1D1863-D65E-4FD2-A02F-5387914A21A0}|Projet\\Projet.csproj|solutionrelative:projet\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Position.cs",
+              "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\Position.cs",
+              "RelativeDocumentMoniker": "Projet\\Position.cs",
+              "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\Position.cs",
+              "RelativeToolTip": "Projet\\Position.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T13:39:25.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpaceShip.cs",
+              "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\SpaceShip.cs",
+              "RelativeDocumentMoniker": "Projet\\SpaceShip.cs",
+              "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\SpaceShip.cs",
+              "RelativeToolTip": "Projet\\SpaceShip.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAvwC8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T13:39:13.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Missile.cs",
+              "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\Missile.cs",
+              "RelativeDocumentMoniker": "Projet\\Missile.cs",
+              "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\Missile.cs",
+              "RelativeToolTip": "Projet\\Missile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T13:39:00.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\Program.cs",
+              "RelativeDocumentMoniker": "Projet\\Program.cs",
+              "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet\\Projet\\Program.cs",
+              "RelativeToolTip": "Projet\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T13:38:26.957Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\obj\Debug\Projet.csproj.AssemblyReference.cache
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\obj\Debug\Projet.csproj.CoreCompileInputs.cache
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\bin\Debug\Projet.exe.config
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\bin\Debug\Projet.exe
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\bin\Debug\Projet.pdb
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\obj\Debug\Projet.exe
+D:\Cours-Semestre\Semestres\Semestre 1-2\Projet-Module-C#\Projet\Projet\obj\Debug\Projet.pdb

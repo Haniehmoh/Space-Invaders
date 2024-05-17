@@ -4,37 +4,25 @@
 ///Description:jeu Space Invaders
 using System;
 using System.Collections.Generic;
-using Projet_Space_invaders;
+
 using System.Windows.Input;
+using Projet;
 
-namespace Projet_Space_invaders
+namespace Projet
 {
-    internal class Missile 
+    internal class Missile
     {
-        public bool HasHitWall { get;  set; }
+        public bool HasHitWall { get; private set; }
 
-        public int _positionX {  get; set; }
-
-        public int _positionY {  get; set; }
-
+        public int _positionX { get; set; }
+        public int _positionY { get; set; }
         public char _symbol = '|';
-
         public int _speed;
-
         public List<Missile> _missiles = new List<Missile>();
-
         public int PositionY { get { return _positionY; } } // Ajout d'un getter pour la position Y
 
         public int PositionX { get { return _positionX; } }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="speed"></param>
-        /// <param name="symbol"></param>
-        public Missile(int x, int y, int speed, char symbol )
+        public Missile(int x, int y, int speed, char symbol)
         {
             _positionX = x;
             _positionY = y;
@@ -43,10 +31,6 @@ namespace Projet_Space_invaders
             HasHitWall = false; // Initialisation du booléen à false
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="missiles"></param>
         public void MoveEnemy(List<Missile> missiles)
         {
             // Vérifier si le missile est toujours dans la zone d'affichage de la console
@@ -81,56 +65,27 @@ namespace Projet_Space_invaders
 
 
 
-    public void Move()
+
+        public void Move()
         {
             _positionY -= _speed;
-            if (PositionY < 0)
+            if (_positionY < 0) // Vérifier si le missile est sorti de la zone d'affichage
             {
-                // Si le missile est sorti de la zone d'affichage, marquez-le pour être supprimé
-                HasHitWall = true;
-            }
-        }
-
-        public void Draw()
-        {
-            // Dessiner le missile s'il est dans la zone d'affichage de la console
-            if (PositionY >= 0 && PositionX >= 0)
-            {
-                Console.SetCursorPosition(PositionX, PositionY);
-                Console.Write(_symbol);
+                // Retirer le missile de la liste
+                _missiles.Remove(this);
             }
         }
 
 
-        public void Update()
-        {
-            // Effacer la position actuelle du missile
-            Console.SetCursorPosition(PositionX, PositionY);
-            Console.Write(' ');
-
-            // Déplacer le missile vers le haut
-            Move();
-
-            // Dessiner le missile à sa nouvelle position
-            Draw();
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
         public void DrawMissile()
-            {
+        {
             if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
             {
                 Console.SetCursorPosition(_positionX, _positionY);
                 Console.Write(_symbol);
             }
-            }
+        }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public void DrawEnemy()
         {
             if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
@@ -139,14 +94,10 @@ namespace Projet_Space_invaders
                 Console.Write(_symbol);
             }
         }
-        public void DrawEnemyMissil()
-        {
-            if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
-            {
-                Console.SetCursorPosition(_positionX, _positionY);
-                Console.Write(_symbol);
-            }
-        }
 
+        internal void MoveAndCheckCollision()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
