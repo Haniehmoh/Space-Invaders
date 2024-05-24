@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projet-Space invaders", "Projet-Space invaders\Projet-Space invaders.csproj", "{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitaire", "TestUnitaire\TestUnitaire.csproj", "{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
