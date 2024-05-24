@@ -1,7 +1,7 @@
 ﻿////ETML 
 ///Hanieh Mohajerani 
 ///date:18.01.2024
-///Description:classe pour creer les missiles et gerer
+///Description:Gère les missiles tirés par le vaisseau et les ennemis.
 using System;
 using System.Collections.Generic;
 using Projet_Space_invaders;
@@ -32,12 +32,12 @@ namespace Projet_Space_invaders
         /// <summary>
         /// Symbole représentant le missile
         /// </summary>
-        public char _symbol = '|';
+        public char Symbol = '|';
 
         /// <summary>
         /// Vitesse du missile
         /// </summary>
-        public int _speed;
+        public int Speed;
 
         /// <summary>
         /// Liste des missiles
@@ -65,8 +65,8 @@ namespace Projet_Space_invaders
         {
             _positionX = x;
             _positionY = y;
-            _speed = speed;
-            _symbol = symbol;
+            Speed = speed;
+            Symbol = symbol;
             HasHitWall = false; // Initialisation du booléen à false
         }
 
@@ -85,7 +85,7 @@ namespace Projet_Space_invaders
                 Console.Write(' '); // Effacer le symbole du missile
 
                 // Mettre à jour la position Y du missile
-                _positionY += _speed;
+                _positionY += Speed;
 
                 // Vérifier si le missile est sorti de l'écran
                 if (_positionY >= Console.WindowHeight)
@@ -113,7 +113,7 @@ namespace Projet_Space_invaders
         /// </summary>
         public void Move()
         {
-            _positionY -= _speed;
+            _positionY -= Speed;
             if (PositionY < 0)
             {
                 // Si le missile est sorti de la zone d'affichage, marquez-le pour être supprimé
@@ -130,7 +130,7 @@ namespace Projet_Space_invaders
             if (PositionY >= 0 && PositionX >= 0)
             {
                 Console.SetCursorPosition(PositionX, PositionY);
-                Console.Write(_symbol);
+                Console.Write(Symbol);
             }
         }
 
@@ -159,7 +159,7 @@ namespace Projet_Space_invaders
             if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
             {
                 Console.SetCursorPosition(_positionX, _positionY);
-                Console.Write(_symbol);
+                Console.Write(Symbol);
             }
         }
 
@@ -171,7 +171,7 @@ namespace Projet_Space_invaders
             if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
             {
                 Console.SetCursorPosition(_positionX, _positionY);
-                Console.Write(_symbol);
+                Console.Write(Symbol);
             }
         }
 
@@ -183,7 +183,7 @@ namespace Projet_Space_invaders
             if (_positionY >= 0 && _positionX >= 0) // Vérifier que le missile est dans la zone d'affichage de la console
             {
                 Console.SetCursorPosition(_positionX, _positionY);
-                Console.Write(_symbol);
+                Console.Write(Symbol);
             }
         }
 
@@ -197,8 +197,8 @@ namespace Projet_Space_invaders
 | - HasHitWall: bool              |
 | - _positionX: int               |
 | - _positionY: int               |
-| - _symbol: char                 |
-| - _speed: int                   |
+| - Symbol: char                 |
+| - Speed: int                   |
 | - _missiles: List<Missile>      |
 -----------------------------------
 | + PositionX: int                |

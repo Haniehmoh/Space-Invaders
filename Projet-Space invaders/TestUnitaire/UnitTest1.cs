@@ -30,8 +30,8 @@ namespace TestUnitaire
             // Assert
             Assert.AreEqual(x, missile._positionX);
             Assert.AreEqual(y, missile._positionY);
-            Assert.AreEqual(speed, missile._speed);
-            Assert.AreEqual(symbol, missile._symbol);
+            Assert.AreEqual(speed, missile.Speed);
+            Assert.AreEqual(symbol, missile.Symbol);
             Assert.IsFalse(missile.HasHitWall);
         }
 

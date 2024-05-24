@@ -28,7 +28,7 @@ namespace Projet_Space_invaders
         /// <param name="spaceShip"></param>
         public Position(int x, int y, int speed, char symbol, SpaceShip spaceShip) : base(x, y, speed, symbol)
         {
-            _spaceShip = spaceShip;
+            this._spaceShip = spaceShip;
         }
 
         public SpaceShip SpaceShip { get; internal set; }

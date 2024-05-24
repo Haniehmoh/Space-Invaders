@@ -1,7 +1,7 @@
 ﻿///ETML 
 ///Hanieh Mohajerani 
 ///date:18.01.2024
-///Description:classe principle pour jeu Space Invaders que a le role de creer les methode et creer les enemies et ship et mur et affichage tout
+///Description: c'est la classe principle que représente le vaisseau spatial contrôlé par le joueur 
 using Projet_Space_invaders;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace Projet_Space_invaders
         /// <summary>
         /// Variable pour compter les touches sur le vaisseau
         /// </summary>
-        public int _shipLives = 3;  
+        public int ShipLives = 3;  
 
         /// <summary>
         /// Temps de début du jeu
@@ -35,17 +35,17 @@ namespace Projet_Space_invaders
         /// <summary>
         /// Position du vaisseau
         /// </summary>
-        public Position _position;
+        public Position Position;
 
         /// <summary>
         /// Liste des murs
         /// </summary>
-        public List<Wall> _walls = new List<Wall>();
+        public List<Wall> Walls = new List<Wall>();
 
         /// <summary>
         ///Missile tiré par le vaisseau  Référence à l'objet Missile
         /// </summary>
-        public Missile _missile;
+        public Missile missile;
 
         /// <summary>
         ///Instance de missile 
@@ -55,19 +55,19 @@ namespace Projet_Space_invaders
         /// <summary>
         /// Position initiale du vaisseau en Y
         /// </summary>
-        public int _shipPositionX = 20;
+        public int ShipPositionX = 20;
 
         /// <summary>
         /// Position initiale du vaisseau en X
         /// </summary>
-        public int _shipPositionY = 25;
+        public int ShipPositionY = 25;
 
-        // public int _shipPositionY = Console.WindowHeight * 5/ 4;
+        // public int ShipPositionY = Console.WindowHeight * 5/ 4;
 
         /// <summary>
         /// Symbole représentant le vaisseau
         /// </summary>
-        public string _shipSymbol = "<-->";
+        public string ShipSymbol = "<-->";
 
         /// <summary>
         /// Liste des missiles du vaisseau
@@ -98,16 +98,16 @@ namespace Projet_Space_invaders
         /// <summary>
         /// Direction du mouvement des ennemis (true pour droite, false pour gauche)
         /// </summary>
-        private bool isright = true;
+        private bool _isright = true;
 
         /// <summary>
         /// Liste des positions des ennemis
         /// </summary>
-        public List<int[]> _enemyPositions = new List<int[]>();
+        public List<int[]> enemyPositions = new List<int[]>();
 
         /// <summary>
         /// Indicateur pour savoir si le jeu est en cours
-        public  bool _gameRunning = true;
+        public  bool GameRunning = true;
 
         /// <summary>
         /// Constructeur de la classe SpaceShip.
@@ -115,7 +115,7 @@ namespace Projet_Space_invaders
         public SpaceShip()
         {
             // Création de l'instance de Position avec les paramètres nécessaires
-            _position = new Position(0, 0, 1, ' ', this);
+            Position = new Position(0, 0, 1, ' ', this);
 
             // Définir le temps de début du jeu
             _gameStartTime = DateTime.Now;
@@ -127,7 +127,7 @@ namespace Projet_Space_invaders
             CreateEnemies();
 
             // Boucle principale du jeu
-            while (_gameRunning)
+            while (GameRunning)
             {
                 // Gestion des entrées du vaisseau
                 HandleShipInput();
@@ -148,7 +148,7 @@ namespace Projet_Space_invaders
                 if (HasGameTimeElapsed())
                 {
                     Console.WriteLine("Game Over");
-                    _gameRunning = false;
+                    GameRunning = false;
                 }
 
                 // Pause pour ralentir la boucle du jeu
@@ -175,10 +175,10 @@ namespace Projet_Space_invaders
         {
             if (Console.KeyAvailable)
             {
-                if (Keyboard.IsKeyDown(Key.Left) && _shipPositionX > 0)
-                    _shipPositionX--;
-                if (Keyboard.IsKeyDown(Key.Right) && _shipPositionX + _shipSymbol.Length < Console.WindowWidth)
-                    _shipPositionX++;
+                if (Keyboard.IsKeyDown(Key.Left) && ShipPositionX > 0)
+                    ShipPositionX--;
+                if (Keyboard.IsKeyDown(Key.Right) && ShipPositionX + ShipSymbol.Length < Console.WindowWidth)
+                    ShipPositionX++;
                 if (Keyboard.IsKeyDown(Key.Space)) // Tirer vers le haut
                     ShootFromShip();
             }
@@ -191,8 +191,8 @@ namespace Projet_Space_invaders
         {           
             if (_shipMissiles.Count == 0)
             {
-                int missileX = _shipPositionX + _shipSymbol.Length / 2; // Centre du vaisseau
-                int missileY = _shipPositionY - 1; // Au-dessus du vaisseau
+                int missileX = ShipPositionX + ShipSymbol.Length / 2; // Centre du vaisseau
+                int missileY = ShipPositionY - 1; // Au-dessus du vaisseau
                 int missileSpeed = 2; // Vitesse du missile
                 char missileSpeedChar = '|';
                 _shipMissiles.Add(new Missile(missileX, missileY, missileSpeed, missileSpeedChar));
@@ -210,7 +210,7 @@ namespace Projet_Space_invaders
             int spacingX = 5; // Espacement horizontal entre les ennemis
             int spacingY = 2; // Espacement vertical entre les lignes d'ennemis
 
-            _enemyPositions.Clear();
+            enemyPositions.Clear();
 
             for (int line = 0; line < numLines; line++)
             {
@@ -218,7 +218,7 @@ namespace Projet_Space_invaders
                 {
                     int x = _enemyPositionX + i * spacingX;
                     int y = _enemyPositionY + 3 + line * spacingY;
-                    _enemyPositions.Add(new int[] { x, y });
+                    enemyPositions.Add(new int[] { x, y });
 
                     if (line == numLines - 1 && random.Next(0, 100) < 5)
                     {
@@ -237,15 +237,15 @@ namespace Projet_Space_invaders
 
             bool needToMoveDown = false; // Indicateur pour savoir si les ennemis doivent descendre d'une ligne
 
-            for (int i = 0; i < _enemyPositions.Count; i++)
+            for (int i = 0; i < enemyPositions.Count; i++)
             {
-                int[] enemy = _enemyPositions[i];
+                int[] enemy = enemyPositions[i];
 
-                if (isright)
+                if (_isright)
                 {
                     if (enemy[0] + _enemySymbol.Length >= Console.WindowWidth)
                     {
-                        isright = false;
+                        _isright = false;
                         needToMoveDown = true; // Les ennemis doivent descendre
                         break; // Sortir de la boucle pour éviter de dépasser le bord
                     }
@@ -254,18 +254,18 @@ namespace Projet_Space_invaders
                 {
                     if (enemy[0] <= 0)
                     {
-                        isright = true;
+                        _isright = true;
                         needToMoveDown = true; // Les ennemis doivent descendre
                         break; // Sortir de la boucle pour éviter de dépasser le bord
                     }
                 }
             }
 
-            for (int i = 0; i < _enemyPositions.Count; i++)
+            for (int i = 0; i < enemyPositions.Count; i++)
             {
-                int[] enemy = _enemyPositions[i];
+                int[] enemy = enemyPositions[i];
 
-                if (isright)
+                if (_isright)
                 {
                     enemy[0]++;
                 }
@@ -289,7 +289,7 @@ namespace Projet_Space_invaders
             {
                 missile.MoveEnemy(_enemyMissiles);
 
-                foreach (var wall in _walls.ToList())
+                foreach (var wall in Walls.ToList())
                 {
                     if (missile.PositionX == wall.XPosition && missile.PositionY == wall.YPosition)
                     {
@@ -298,9 +298,9 @@ namespace Projet_Space_invaders
                     }
                 }
             }
-            foreach (var enemy in _enemyPositions)
+            foreach (var enemy in enemyPositions)
             {
-                foreach (var wall in _walls)
+                foreach (var wall in Walls)
                 {
                     if (enemy[1] == wall.YPosition - 1)
                     {
@@ -330,9 +330,9 @@ namespace Projet_Space_invaders
         /// </summary>
         public void MoveEnemiesVertically()
         {
-            for (int i = 0; i < _enemyPositions.Count; i++)
+            for (int i = 0; i < enemyPositions.Count; i++)
             {
-                _enemyPositions[i][1]++;
+                enemyPositions[i][1]++;
             }
         }
 
@@ -353,17 +353,17 @@ namespace Projet_Space_invaders
             Console.Write("Time elapsed: " + elapsedTime.ToString(@"mm\:ss"));
             // Afficher le nombre de vies restantes
             Console.SetCursorPosition(0, 1); // Positionner le curseur où vous voulez afficher les vies
-            Console.Write("Ship Lives: " + _shipLives);
+            Console.Write("Ship Lives: " + ShipLives);
 
             // Dessiner les murs
-            foreach (var wall in _walls)
+            foreach (var wall in Walls)
             {
                 wall.Draw();
             }
 
             // Dessiner le vaisseau
-            Console.SetCursorPosition(_shipPositionX, _shipPositionY);
-            Console.Write(_shipSymbol);
+            Console.SetCursorPosition(ShipPositionX, ShipPositionY);
+            Console.Write(ShipSymbol);
 
             // Dessiner les missiles du vaisseau
             foreach (var missile in _shipMissiles)
@@ -378,18 +378,18 @@ namespace Projet_Space_invaders
             }
 
             //// Dessiner les ennemis
-            foreach (var enemy in _enemyPositions)
+            foreach (var enemy in enemyPositions)
             {
                 missil.DrawEnemy();
             }
-            foreach (var position in _enemyPositions)
+            foreach (var position in enemyPositions)
             {
                 Console.SetCursorPosition(position[0], position[1]);
                 Console.Write(_enemySymbol);
             }
           
             // Dessiner les ennemis
-            foreach (var position in _enemyPositions)
+            foreach (var position in enemyPositions)
             {
                 Console.SetCursorPosition(position[0], position[1]);
                 Console.Write(_enemySymbol);
@@ -403,7 +403,7 @@ namespace Projet_Space_invaders
         public void DrawWalls()
         {
 
-            int[] wallXPositions = { 5, 20, 35 }; // Positions X des murs
+            int[] wallXPositions = { 35, 50, 65 }; // Positions X des murs
             int[] wallYPositions = { Console.WindowHeight - 8 }; // Positions Y des murs
 
             // Parcourir toutes les positions y des murs
@@ -413,12 +413,15 @@ namespace Projet_Space_invaders
                 foreach (int xPosition in wallXPositions)
                 {
                     // Ajouter chaque mur à la liste des murs
-                    _walls.Add(new Wall(xPosition, yPosition, "▌"));
-                    _walls.Add(new Wall(xPosition + 1, yPosition, "▌"));
-                    _walls.Add(new Wall(xPosition + 2, yPosition, "▌"));
-                    _walls.Add(new Wall(xPosition + 3, yPosition, "▌"));
-                    _walls.Add(new Wall(xPosition + 4, yPosition, "▌"));
-                    _walls.Add(new Wall(xPosition + 5, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 1, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 2, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 3, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 4, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 5, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 6, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 7, yPosition, "▌"));
+                    Walls.Add(new Wall(xPosition + 8, yPosition, "▌"));
 
                 }
             }
@@ -435,7 +438,7 @@ namespace Projet_Space_invaders
                 missile.Move();
 
                 // Vérifier la collision avec le mur
-                foreach (var wall in _walls.ToList())
+                foreach (var wall in Walls.ToList())
                 {
                     if (missile.PositionX == wall.XPosition && missile.PositionY == wall.YPosition)
                     {
@@ -469,7 +472,7 @@ namespace Projet_Space_invaders
         {
             foreach (var missile in _shipMissiles.ToList())
             {
-                foreach (var enemyPosition in _enemyPositions.ToList())
+                foreach (var enemyPosition in enemyPositions.ToList())
                 {
                     int enemyX = enemyPosition[0];
                     int enemyY = enemyPosition[1];
@@ -478,7 +481,7 @@ namespace Projet_Space_invaders
                     {
                         Console.SetCursorPosition(enemyX, enemyY);
                         Console.Write(" ");
-                        _enemyPositions.Remove(enemyPosition);
+                        enemyPositions.Remove(enemyPosition);
                         missile.HasHitWall = true;
                         break;
                     }
@@ -498,24 +501,24 @@ namespace Projet_Space_invaders
 -----------------------------------
 | SpaceShip |
 -----------------------------------
-| -_shipLives: int               |
+| -ShipLives: int               |
 | - _gameStartTime: DateTime |
 | -Enemy: Enemy |
-| -_position: Position |
-| -_walls: List<Wall> |
-| -_missile: Missile |
+| -Position: Position |
+| -Walls: List<Wall> |
+| -Missile: Missile |
 | -missil: Missile |
-| -_shipPositionX: int           |
-| - _shipPositionY: int           |
-| - _shipSymbol: string           |
+| -ShipPositionX: int           |
+| - ShipPositionY: int           |
+| - ShipSymbol: string           |
 | - _shipMissiles: List<Missile> |
 | -_enemyPositionX: int          |
 | - _enemyPositionY: int          |
 | - _enemySymbol: string          |
 | - _enemyMissiles: List<Missile> |
-| -isright: bool                 |
-| - _enemyPositions: List<int[]> |
-| -_gameRunning: static bool     |
+| -_isright: bool                 |
+| - enemyPositions: List<int[]> |
+| -GameRunning: static bool     |
 -----------------------------------
 | +SpaceShip() |
 | -CreateEnemies(): void         |

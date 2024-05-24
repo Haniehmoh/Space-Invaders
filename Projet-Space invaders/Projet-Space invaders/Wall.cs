@@ -1,7 +1,7 @@
 ﻿///ETML 
 ///Hanieh Mohajerani 
 ///date:18.01.2024
-///Description:classe creer les mures
+///Description:Définit les murs que le vaisseau doit protéger des missiles ennemis.
 using System;
 using System.Collections.Generic;
 using System.IO;

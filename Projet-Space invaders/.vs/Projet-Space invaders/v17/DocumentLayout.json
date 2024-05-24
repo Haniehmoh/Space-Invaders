@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|d:\\cours-semestre\\semestres\\semestre 1-2\\projet-module-c#\\projet-space invaders\\projet-space invaders\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}|TestUnitaire\\TestUnitaire.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\testunitaire\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}|TestUnitaire\\TestUnitaire.csproj|solutionrelative:testunitaire\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +25,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|d:\\cours-semestre\\semestres\\semestre 1-2\\projet-module-c#\\projet-space invaders\\projet-space invaders\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
       "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\projet-space invaders\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECEFF9C3-09A6-48A6-9A07-B2FF6821C29C}|Projet-Space invaders\\Projet-Space invaders.csproj|solutionrelative:projet-space invaders\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}|TestUnitaire\\TestUnitaire.csproj|D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\testunitaire\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BAB31F-6991-4F6C-ADD6-B21EFDE32903}|TestUnitaire\\TestUnitaire.csproj|solutionrelative:testunitaire\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ClassDiagram1.cd",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\ClassDiagram1.cd",
               "RelativeDocumentMoniker": "Projet-Space invaders\\ClassDiagram1.cd",
@@ -62,20 +62,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\MainMenu.cs",
               "RelativeDocumentMoniker": "Projet-Space invaders\\MainMenu.cs",
               "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\MainMenu.cs",
               "RelativeToolTip": "Projet-Space invaders\\MainMenu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T19:55:45.204Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\TestUnitaire\\UnitTest1.cs",
               "RelativeDocumentMoniker": "TestUnitaire\\UnitTest1.cs",
@@ -83,34 +83,32 @@
               "RelativeToolTip": "TestUnitaire\\UnitTest1.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T18:50:25.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T18:50:25.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "SpaceShip.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\SpaceShip.cs",
               "RelativeDocumentMoniker": "Projet-Space invaders\\SpaceShip.cs",
               "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\SpaceShip.cs",
               "RelativeToolTip": "Projet-Space invaders\\SpaceShip.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-07T13:00:43.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Enemy.cs",
               "RelativeDocumentMoniker": "Projet-Space invaders\\Enemy.cs",
               "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Enemy.cs",
               "RelativeToolTip": "Projet-Space invaders\\Enemy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAUAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAA9wAkAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:55:02.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:55:02.214Z"
             },
             {
               "$type": "Document",
@@ -120,40 +118,40 @@
               "RelativeDocumentMoniker": "Projet-Space invaders\\Wall.cs",
               "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Wall.cs",
               "RelativeToolTip": "Projet-Space invaders\\Wall.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T12:22:49.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Position.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Position.cs",
               "RelativeDocumentMoniker": "Projet-Space invaders\\Position.cs",
               "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Position.cs",
               "RelativeToolTip": "Projet-Space invaders\\Position.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAkAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-19T13:16:14.55Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Missile.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Missile.cs",
               "RelativeDocumentMoniker": "Projet-Space invaders\\Missile.cs",
               "ToolTip": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Missile.cs",
               "RelativeToolTip": "Projet-Space invaders\\Missile.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADsAAAAuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-07T13:01:08.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Cours-Semestre\\Semestres\\Semestre 1-2\\Projet-Module-C#\\Projet-Space invaders\\Projet-Space invaders\\Program.cs",
               "RelativeDocumentMoniker": "Projet-Space invaders\\Program.cs",
@@ -161,8 +159,7 @@
               "RelativeToolTip": "Projet-Space invaders\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T13:00:05.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-07T13:00:05.598Z"
             }
           ]
         }

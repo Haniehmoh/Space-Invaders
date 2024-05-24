@@ -1,13 +1,13 @@
 ﻿///ETML 
 ///Hanieh Mohajerani 
 ///date:18.01.2024
-///Description:classe menu pour affichage de menu le jeu 
+///Description:Gère l'affichage et la navigation dans le menu principal du jeu.
 using System;
 
 namespace Projet_Space_invaders
 {
     /// <summary>
-    /// class mainmenu
+    /// classe mainmenu
     /// </summary>
     class MainMenu
     {
